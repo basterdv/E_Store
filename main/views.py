@@ -7,7 +7,7 @@ def index(request):
         'title': 'Home - Главная',
         'content': 'Магазин мебели HOME'
     }
-    return render(request, 'main/index.html',context)
+    return render(request, 'main/index.html', context)
 
 
 def about(request) -> HttpResponse:
