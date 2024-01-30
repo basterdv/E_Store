@@ -47,8 +47,13 @@
     <!-- Карта товара -->
     <div class="col-lg-4 col-md-6 p-4">
         <div class="card border-primary rounded custom-shadow">
-            <img src="{% static product.image %}" class="card-img-top"
-                 alt="...">
+            {% if product.image %}
+                <img src="{{ product.image.url }}" class="card-img-top"
+                                 alt="...">
+            {% else %}
+                <img src="{% static 'vassalage/images/Not found image.png' %}" class="card-img-top"
+                                 alt="{{product.name}}">
+            {% endif %}
             <div class="card-body">
                 <a href="../goods/product.html">
                     <p class="card-title">{{ product.name }}</p>
