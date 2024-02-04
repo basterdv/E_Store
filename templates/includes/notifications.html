@@ -15,12 +15,11 @@
 {% endif %}
 
 <!-- Оповещения в формах -->
-<!--{% if form.non_field_errors %}-->
-<!--<div class="alert alert-danger alert-dismissible fade show">Ошибка</div>-->
-<!--{% endif %}-->
+{% if form.first_name.errors %}
+<div class="alert alert-danger alert-dismissible fade show">Ошибка</div>
+{% endif %}
 
 <!-- Для оповещений -->
-{% if form.first_name.errors %}
 <div class="container mt-4">
     <div class="row justify-content-center">
         <div class="col-md-6">
@@ -44,4 +43,3 @@
         </div>
     </div>
 </div>
-{% endif %}

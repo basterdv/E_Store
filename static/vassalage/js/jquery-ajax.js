@@ -1,7 +1,36 @@
 // Когда html документ готов (прорисован)
 $(document).ready(function () {
+    //Берём из разметки элемент по шв - оповещения от django
+    var notification = $('#notification');
+    // И через 7 сек. убираем
+    if (notification.length > 0){
+        setTimeout(function(){
+            notification.alert('close');
+        },7000);
+    }
+
+    // При клике по значку корзины открываем всплывающее(модальное) окно
+    $('#modalButton').click(function(){
+        $('#exampleModal').appendTo('body');
+
+        $('exampleModal').modal('show');
+    });
+
+    // Событие клик по кнопке закрыть окно корзины
+    $('#exampleModal').click(function(){
+        $('#exampleModal').modal('hide');
+    });
+
+    //Обработчик события радиокнопки выбора способа доставки
+    $('input[name='requires_delivery']').change(function(){
+        var selectValue === "1") {
+            $('#deliveryAddressField').show();
+        } else {
+            $('#deliveryAddressField').hide();
+        }
+    });
     // берем в переменную элемент разметки с id jq-notification для оповещений от ajax
-    var successMessage = $("#jq-notification");
+    //var successMessage = $("#jq-notification");
 
     // // Ловим собыитие клика по кнопке добавить в корзину
     // $(document).on("click", ".add-to-cart", function (e) {
