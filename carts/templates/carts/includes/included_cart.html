@@ -36,7 +36,7 @@
                         <a href="{% url "cart:cart_remove" %}" class="remove-from-cart"
                         data-cart-id="{{ cart.id }}">
                             {% csrf_token %}
-                            <img class="mx-1" src="{% static "deps/icons/trash3-fill.svg" %}"
+                            <img class="mx-1" src="{% static "vassalage/icons/trash3-fill.svg" %}"
                                 alt="Catalog Icon" width="16" height="16">
                         </a>
                     </div>
@@ -51,8 +51,8 @@
         <h4 class="float-left"><strong>{{ carts.total_price }} $</strong></h4>
     </div>
 </div>
-{% if carts and not orders%}
-<a class="btn btn-dark" href="{% url "orders:create_order" %}">
-    Оформить заказ
-</a>
-{% endif %}
+{#{% if carts and not orders %}#}
+    <a class="btn btn-dark" href="{% url "orders:create_order" %}">
+        Оформить заказ
+    </a>
+{#{% endif %}#}
