@@ -3,9 +3,19 @@ venv/
 .pylintrc
 __pycache__/
 
+#settings
+E_Store/prod_settings.py
+E_Store/local_settings.py
+
 #ide stuff
 .idea
 
 #django staff
 db.sqlite3
 media/
+
+
+
+
+
+logs/debug.log
